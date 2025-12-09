@@ -5,14 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * ORDER MODEL
- * 
- * This class represents a customer's order.
- * When user clicks "Place Order", this object is created.
- * 
- * @Document tells MongoDB this is a collection named "orders"
- */
+
 @Document(collection = "orders")
 public class Order {
     
