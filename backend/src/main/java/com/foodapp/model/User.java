@@ -4,14 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.index.Indexed;
 
-/**
- * USER MODEL
- * 
- * This class represents a User in our system.
- * It defines what information we store about each user.
- * 
- * @Document tells MongoDB this is a collection named "users"
- */
+
 @Document(collection = "users")
 public class User {
     
