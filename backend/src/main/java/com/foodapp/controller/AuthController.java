@@ -6,15 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * AUTHENTICATION CONTROLLER
- * 
- * Handles user registration and login
- * 
- * @RestController = @Controller + @ResponseBody
- * @RequestMapping = Base URL for all methods
- * @CrossOrigin = Allow frontend to call these APIs
- */
+
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "*")
@@ -23,15 +15,7 @@ public class AuthController {
     @Autowired
     private UserService userService;
     
-    /**
-     * REGISTER NEW USER
-     * 
-     * POST /api/auth/register
-     * Body: { "name": "John", "email": "john@gmail.com", "password": "pass123", "phone": "1234567890", "address": "123 Street" }
-     * 
-     * @PostMapping = Handle POST requests
-     * @RequestBody = Convert JSON to User object
-     */
+   
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
         try {
@@ -44,12 +28,7 @@ public class AuthController {
         }
     }
     
-    /**
-     * LOGIN USER
-     * 
-     * POST /api/auth/login
-     * Body: { "email": "john@gmail.com", "password": "pass123" }
-     */
+  
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try {
@@ -62,10 +41,7 @@ public class AuthController {
         }
     }
     
-    /**
-     * LOGIN REQUEST DTO (Data Transfer Object)
-     * Simple class to receive login data
-     */
+    
     static class LoginRequest {
         private String email;
         private String password;
