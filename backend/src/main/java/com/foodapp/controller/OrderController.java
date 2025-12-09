@@ -7,12 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-/**
- * ORDER CONTROLLER
- * 
- * Handles all order-related operations
- * Base URL: /api/orders
- */
+
 @RestController
 @RequestMapping("/api/orders")
 @CrossOrigin(origins = "*")
@@ -21,18 +16,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
     
-    /**
-     * PLACE NEW ORDER
-     * POST /api/orders
-     * Body: {
-     *   "userId": "user123",
-     *   "items": [
-     *     { "foodId": "food1", "quantity": 2 },
-     *     { "foodId": "food2", "quantity": 1 }
-     *   ],
-     *   "deliveryAddress": "123 Street"
-     * }
-     */
+    
     @PostMapping
     public ResponseEntity<?> placeOrder(@RequestBody Order order) {
         try {
@@ -43,43 +27,28 @@ public class OrderController {
         }
     }
     
-    /**
-     * GET USER'S ORDERS
-     * GET /api/orders/user/{userId}
-     * Example: GET /api/orders/user/user123
-     */
+    
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Order>> getUserOrders(@PathVariable String userId) {
         List<Order> orders = orderService.getUserOrders(userId);
         return ResponseEntity.ok(orders);
     }
     
-    /**
-     * GET ALL ORDERS (Admin only)
-     * GET /api/orders
-     */
+  
     @GetMapping
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
         return ResponseEntity.ok(orders);
     }
     
-    /**
-     * GET ORDERS BY STATUS (Admin only)
-     * GET /api/orders/status/{status}
-     * Example: GET /api/orders/status/PENDING
-     */
+   
     @GetMapping("/status/{status}")
     public ResponseEntity<List<Order>> getOrdersByStatus(@PathVariable String status) {
         List<Order> orders = orderService.getOrdersByStatus(status);
         return ResponseEntity.ok(orders);
     }
     
-    /**
-     * UPDATE ORDER STATUS (Admin only)
-     * PUT /api/orders/{id}/status
-     * Body: { "status": "CONFIRMED" }
-     */
+   
     @PutMapping("/{id}/status")
     public ResponseEntity<?> updateOrderStatus(@PathVariable String id, @RequestBody StatusRequest request) {
         try {
@@ -90,10 +59,7 @@ public class OrderController {
         }
     }
     
-    /**
-     * CANCEL ORDER
-     * DELETE /api/orders/{id}/user/{userId}
-     */
+   
     @DeleteMapping("/{id}/user/{userId}")
     public ResponseEntity<?> cancelOrder(@PathVariable String id, @PathVariable String userId) {
         try {
@@ -104,9 +70,7 @@ public class OrderController {
         }
     }
     
-    /**
-     * STATUS REQUEST DTO
-     */
+   
     static class StatusRequest {
         private String status;
         
