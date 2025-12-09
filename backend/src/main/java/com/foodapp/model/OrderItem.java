@@ -1,14 +1,6 @@
 package com.foodapp.model;
 
-/**
- * ORDER ITEM MODEL
- * 
- * This represents ONE item in an order.
- * Example: "2x Margherita Pizza @ ₹299 each"
- * 
- * This is NOT a separate collection in MongoDB.
- * It's embedded inside Order document.
- */
+
 public class OrderItem {
     
     private String foodId;          // Which food item?
@@ -61,10 +53,7 @@ public class OrderItem {
         this.price = price;
     }
     
-    /**
-     * Calculate total price for this item
-     * Example: 2 pizzas @ ₹299 = ₹598
-     */
+   
     public Double getSubtotal() {
         return quantity * price;
     }
