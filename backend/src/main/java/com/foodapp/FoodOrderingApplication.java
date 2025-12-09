@@ -13,8 +13,8 @@ public class FoodOrderingApplication {
         SpringApplication.run(FoodOrderingApplication.class, args);
         
         System.out.println("========================================");
-        System.out.println("🚀 Food Ordering Backend Started!");
-        System.out.println("📍 Running on: http://localhost:8080");
+        System.out.println(" Food Ordering Backend Started!");
+        System.out.println(" Running on: http://localhost:8080");
         System.out.println("========================================");
     }
 }
