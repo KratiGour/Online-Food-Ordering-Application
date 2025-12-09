@@ -3,14 +3,7 @@ package com.foodapp.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * FOOD MODEL
- * 
- * This class represents a Food Item in our menu.
- * Example: Pizza, Burger, Pasta, etc.
- * 
- * @Document tells MongoDB this is a collection named "foods"
- */
+
 @Document(collection = "foods")
 public class Food {
     
