@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="images/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="orders.html">My Orders</a>
+                <a href="cart.html" class="active">Cart</a>
+            </div>
+            <div class="nav-actions">
+                <span id="userName" class="user-name"></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        
+        <div class="cart-summary">
+            <h3>Total: ₹<span id="totalAmount">0</span></h3>
+            <button onclick="placeOrder()" class="btn-primary">Place Order</button>
+            <button onclick="clearCart()" class="btn-secondary">Clear Cart</button>
+        </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
