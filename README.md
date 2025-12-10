@@ -290,7 +290,6 @@ Frontend (HTML/CSS/JS) → Controllers → Services → Repositories → MongoDB
 
   Future Enhancements
 
--  JWT token-based authentication
 -  Payment gateway integration (Razorpay/Stripe)
 -  Real-time order tracking with WebSockets
 -  Email notifications
